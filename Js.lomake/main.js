@@ -1,24 +1,10 @@
 function btn(){
-kieli();
-sex();
 req();
+cb();
+radio();
 
 }
-function kieli(){
-    if (document.getElementById('kieli').checked || document.getElementById('kieli2').checked){
-    }else{
-        alert('Valitse kieli!')
-        event.preventDefault()
-    }
-}
-function sex(){
-    if (document.getElementById('mies').checked || document.getElementById('nainen').checked){
 
-    }else{
-        alert('Valitse sukupuoli!')
-        event.preventDefault()
-    }
-}
 function req(){
     document.getElementById('id').required = true;
     document.getElementById('salasana').required = true;
@@ -27,4 +13,16 @@ function req(){
     document.getElementById('postinro').required = true;
     document.getElementById('email').required = true;
     document.getElementById('maa').required = true;
+}
+function cb(){
+    document.getElementById('kieli').required = true;
+    if(document.getElementById('kieli2').checked){
+        document.getElementById('kieli').required = false;
+    }
+}
+function radio(){
+    document.getElementById('mies').required = true;
+    if(document.getElementById('nainen').checked){
+        document.getElementById('mies').required = false;
+    }
 }
